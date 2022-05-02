@@ -1,0 +1,5 @@
+
+State Machine - |EECS3216_Lab3|rightLedCount
+Name rightLedCount.11 
+rightLedCount.00 0 
+rightLedCount.11 1 

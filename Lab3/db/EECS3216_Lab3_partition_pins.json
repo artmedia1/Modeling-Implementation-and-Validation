@@ -1,0 +1,65 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sevenSegDisplay[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sevenSegDisplay[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sevenSegDisplay[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sevenSegDisplay[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sevenSegDisplay[6]",
+					"strict" : false
+				},
+				{
+					"name" : "leftLights[0]",
+					"strict" : false
+				},
+				{
+					"name" : "leftLights[1]",
+					"strict" : false
+				},
+				{
+					"name" : "leftLights[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rightLights[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rightLights[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rightLights[2]",
+					"strict" : false
+				},
+				{
+					"name" : "leftLightSwitch",
+					"strict" : false
+				},
+				{
+					"name" : "rightLightSwitch",
+					"strict" : false
+				},
+				{
+					"name" : "cin",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

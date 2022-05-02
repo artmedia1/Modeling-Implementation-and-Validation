@@ -1,0 +1,89 @@
+package definitions;
+
+
+  parameter ON  = 1'b1;
+  parameter OFF = 1'b0;
+
+  enum logic [5:0] {push, pop} State, NextState;
+
+  integer sixBitNum = 0;
+  reg toggle;
+  reg ignore = 0; //Used to debounce signal
+  parameter D = 32'd25000000;
+
+
+endpackage
+
+module EECS3216_Lab4 (input Clock,
+							 input[5:0] sixBitNum,
+							 output reg [6:0] tenSec,
+							 output reg [6:0] oneSec);
+
+  import definitions::*;
+
+  //
+  // Update state or reset on every + clock edge
+  // We have no clear
+  //
+  
+//  always @(posedge Clock)
+//  begin
+//	if (TimerON)
+//		State <= RST;
+//	else
+//		State <= NextState;
+//  end
+
+
+  always @(posedge Clock)
+  begin 
+			
+		
+		end
+		case (sixBitNum / 10) 
+			5'd1: tenSec <= 7'b1111001;
+			5'd2: tenSec <= 7'b0100100;
+			5'd3: tenSec <= 7'b0110000;
+			5'd4: tenSec <= 7'b0011001;
+			5'd5: tenSec <= 7'b0010010;
+			5'd6: tenSec <= 7'b0000010;
+			5'd7: tenSec <= 7'b1111000;
+			5'd8: tenSec <= 7'b0000000;
+			5'd9: tenSec <= 7'b0011000;
+			default: tenSec <= 7'b1000000; //sets oneSec to 0
+		endcase	
+					
+		case (sixBitNum % 10)
+			5'd1: oneSec <= 7'b1111001;
+			5'd2: oneSec <= 7'b0100100;
+			5'd3: oneSec <= 7'b0110000;
+			5'd4: oneSec <= 7'b0011001;
+			5'd5: oneSec <= 7'b0010010;
+			5'd6: oneSec <= 7'b0000010;
+			5'd7: oneSec <= 7'b1111000;
+			5'd8: oneSec <= 7'b0000000;
+			5'd9: oneSec <= 7'b0011000;
+			default: oneSec <= 7'b1000000; //sets oneSec to 0
+		endcase	
+	end
+  
+
+  //
+  // Next state generation logic
+  //
+
+  always @(State)
+  begin
+  case (State)
+				
+  endcase
+  end
+  
+  
+
+
+
+  
+
+  
+endmodule

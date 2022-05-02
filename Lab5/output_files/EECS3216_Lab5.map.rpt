@@ -1,0 +1,514 @@
+Analysis & Synthesis report for EECS3216_Lab5
+Thu Mar 17 08:25:37 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Mar 17 08:25:37 2022       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; EECS3216_Lab5                               ;
+; Top-level Entity Name              ; EECS3216_Lab5                               ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 538                                         ;
+;     Total combinational functions  ; 538                                         ;
+;     Dedicated logic registers      ; 184                                         ;
+; Total registers                    ; 184                                         ;
+; Total pins                         ; 25                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C6GES   ;                    ;
+; Top-level entity name                                            ; EECS3216_Lab5      ; EECS3216_Lab5      ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; EECS3216_Lab5.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv             ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc      ;         ;
+; db/lpm_divide_fbo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/randy/Documents/School/EECS3216/Lab5/db/lpm_divide_fbo.tdf        ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/randy/Documents/School/EECS3216/Lab5/db/abs_divider_kbg.tdf       ;         ;
+; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/randy/Documents/School/EECS3216/Lab5/db/alt_u_div_she.tdf         ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/randy/Documents/School/EECS3216/Lab5/db/add_sub_t3c.tdf           ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/randy/Documents/School/EECS3216/Lab5/db/add_sub_u3c.tdf           ;         ;
+; db/lpm_abs_o99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/randy/Documents/School/EECS3216/Lab5/db/lpm_abs_o99.tdf           ;         ;
+; db/lpm_abs_8b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/randy/Documents/School/EECS3216/Lab5/db/lpm_abs_8b9.tdf           ;         ;
+; db/lpm_divide_i3o.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/randy/Documents/School/EECS3216/Lab5/db/lpm_divide_i3o.tdf        ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 538         ;
+;                                             ;             ;
+; Total combinational functions               ; 538         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 198         ;
+;     -- 3 input functions                    ; 65          ;
+;     -- <=2 input functions                  ; 275         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 415         ;
+;     -- arithmetic mode                      ; 123         ;
+;                                             ;             ;
+; Total registers                             ; 184         ;
+;     -- Dedicated logic registers            ; 184         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 25          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; Clock~input ;
+; Maximum fan-out                             ; 184         ;
+; Total fan-out                               ; 2179        ;
+; Average fan-out                             ; 2.82        ;
++---------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                      ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                        ; Entity Name     ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |EECS3216_Lab5                        ; 538 (470)           ; 184 (184)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 25   ; 0            ; 0          ; |EECS3216_Lab5                                                                                             ; EECS3216_Lab5   ; work         ;
+;    |lpm_divide:Div0|                  ; 33 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |EECS3216_Lab5|lpm_divide:Div0                                                                             ; lpm_divide      ; work         ;
+;       |lpm_divide_fbo:auto_generated| ; 33 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |EECS3216_Lab5|lpm_divide:Div0|lpm_divide_fbo:auto_generated                                               ; lpm_divide_fbo  ; work         ;
+;          |abs_divider_kbg:divider|    ; 33 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |EECS3216_Lab5|lpm_divide:Div0|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider                       ; abs_divider_kbg ; work         ;
+;             |alt_u_div_she:divider|   ; 33 (33)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |EECS3216_Lab5|lpm_divide:Div0|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider ; alt_u_div_she   ; work         ;
+;    |lpm_divide:Mod0|                  ; 35 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |EECS3216_Lab5|lpm_divide:Mod0                                                                             ; lpm_divide      ; work         ;
+;       |lpm_divide_i3o:auto_generated| ; 35 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |EECS3216_Lab5|lpm_divide:Mod0|lpm_divide_i3o:auto_generated                                               ; lpm_divide_i3o  ; work         ;
+;          |abs_divider_kbg:divider|    ; 35 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |EECS3216_Lab5|lpm_divide:Mod0|lpm_divide_i3o:auto_generated|abs_divider_kbg:divider                       ; abs_divider_kbg ; work         ;
+;             |alt_u_div_she:divider|   ; 35 (35)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |EECS3216_Lab5|lpm_divide:Mod0|lpm_divide_i3o:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider ; alt_u_div_she   ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; State_2_                               ; Stuck at GND due to stuck port data_in ;
+; State_3_                               ; Stuck at GND due to stuck port data_in ;
+; State_4_                               ; Stuck at GND due to stuck port data_in ;
+; State_5_                               ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_31_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_30_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_29_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_28_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_27_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_26_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_25_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_24_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_23_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_22_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_21_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_20_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_19_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_18_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_17_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_16_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_15_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_14_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_13_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_12_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_11_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_10_                       ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_9_                        ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_8_                        ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_7_                        ; Stuck at GND due to stuck port data_in ;
+; numToDisplay_6_                        ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 30 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                           ;
++---------------+---------------------------+-------------------------------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                                                    ;
++---------------+---------------------------+-------------------------------------------------------------------------------------------+
+; State_2_      ; Stuck at GND              ; numToDisplay_31_, numToDisplay_27_, numToDisplay_26_, numToDisplay_25_, numToDisplay_24_, ;
+;               ; due to stuck port data_in ; numToDisplay_23_, numToDisplay_22_, numToDisplay_21_, numToDisplay_20_, numToDisplay_19_, ;
+;               ;                           ; numToDisplay_18_, numToDisplay_17_, numToDisplay_16_, numToDisplay_15_, numToDisplay_14_, ;
+;               ;                           ; numToDisplay_13_, numToDisplay_12_, numToDisplay_11_, numToDisplay_10_, numToDisplay_9_,  ;
+;               ;                           ; numToDisplay_8_, numToDisplay_7_, numToDisplay_6_                                         ;
++---------------+---------------------------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 184   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 128   ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |EECS3216_Lab5|IgnoreTimer_18_  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |EECS3216_Lab5|currentIndex_31_ ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; No         ; |EECS3216_Lab5|numToDisplay     ;
+; 19:1               ; 6 bits    ; 72 LEs        ; 72 LEs               ; 0 LEs                  ; No         ; |EECS3216_Lab5|numToDisplay     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_fbo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_i3o ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 231                         ;
+; cycloneiii_ff         ; 184                         ;
+;     SLD               ; 128                         ;
+;     plain             ; 56                          ;
+; cycloneiii_lcell_comb ; 540                         ;
+;     arith             ; 123                         ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 109                         ;
+;         3 data inputs ; 10                          ;
+;     normal            ; 417                         ;
+;         0 data inputs ; 7                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 150                         ;
+;         3 data inputs ; 55                          ;
+;         4 data inputs ; 198                         ;
+;                       ;                             ;
+; Max LUT depth         ; 16.50                       ;
+; Average LUT depth     ; 9.53                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Thu Mar 17 08:25:24 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EECS3216_Lab5 -c EECS3216_Lab5
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file eecs3216_lab5.sv
+    Info (12022): Found design unit 1: definitions (SystemVerilog) File: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv Line: 1
+    Info (12023): Found entity 1: EECS3216_Lab5 File: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv Line: 20
+Info (12127): Elaborating entity "EECS3216_Lab5" for the top level hierarchy
+Warning (10762): Verilog HDL Case Statement warning at EECS3216_Lab5.sv(101): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv Line: 101
+Warning (10235): Verilog HDL Always Construct warning at EECS3216_Lab5.sv(136): variable "State" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv Line: 136
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv Line: 101
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv Line: 114
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv Line: 101
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv Line: 101
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fbo.tdf
+    Info (12023): Found entity 1: lpm_divide_fbo File: C:/Users/randy/Documents/School/EECS3216/Lab5/db/lpm_divide_fbo.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg File: C:/Users/randy/Documents/School/EECS3216/Lab5/db/abs_divider_kbg.tdf Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_she.tdf
+    Info (12023): Found entity 1: alt_u_div_she File: C:/Users/randy/Documents/School/EECS3216/Lab5/db/alt_u_div_she.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/randy/Documents/School/EECS3216/Lab5/db/add_sub_t3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/randy/Documents/School/EECS3216/Lab5/db/add_sub_u3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_o99.tdf
+    Info (12023): Found entity 1: lpm_abs_o99 File: C:/Users/randy/Documents/School/EECS3216/Lab5/db/lpm_abs_o99.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_8b9.tdf
+    Info (12023): Found entity 1: lpm_abs_8b9 File: C:/Users/randy/Documents/School/EECS3216/Lab5/db/lpm_abs_8b9.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv Line: 114
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv Line: 114
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_i3o.tdf
+    Info (12023): Found entity 1: lpm_divide_i3o File: C:/Users/randy/Documents/School/EECS3216/Lab5/db/lpm_divide_i3o.tdf Line: 25
+Info (13014): Ignored 62 buffer(s)
+    Info (13016): Ignored 62 CARRY_SUM buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "global.bp.work.definitions.NextState_2__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.NextState_3__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.NextState_4__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.NextState_5__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_31__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_30__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_29__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_28__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_27__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_26__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_25__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_24__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_23__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_22__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_21__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_20__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_19__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_18__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_17__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_16__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_15__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_14__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_13__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_12__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_11__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_10__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_9__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_8__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_7__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.numToDisplay_6__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.State_5__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.State_4__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.State_3__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.definitions.State_2__gl_output" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "lpm_divide:Div0|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider|add_sub_29_result_int[0]~12" File: C:/Users/randy/Documents/School/EECS3216/Lab5/db/alt_u_div_she.tdf Line: 137
+    Info (17048): Logic cell "lpm_divide:Div0|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider|add_sub_30_result_int[0]~12" File: C:/Users/randy/Documents/School/EECS3216/Lab5/db/alt_u_div_she.tdf Line: 147
+Info (144001): Generated suppressed messages file C:/Users/randy/Documents/School/EECS3216/Lab5/output_files/EECS3216_Lab5.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 667 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 642 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 4793 megabytes
+    Info: Processing ended: Thu Mar 17 08:25:37 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:21
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/randy/Documents/School/EECS3216/Lab5/output_files/EECS3216_Lab5.map.smsg.
+
+

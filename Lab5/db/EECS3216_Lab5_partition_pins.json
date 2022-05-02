@@ -1,0 +1,109 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "tenSec[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tenSec[1]",
+					"strict" : false
+				},
+				{
+					"name" : "tenSec[2]",
+					"strict" : false
+				},
+				{
+					"name" : "tenSec[3]",
+					"strict" : false
+				},
+				{
+					"name" : "tenSec[4]",
+					"strict" : false
+				},
+				{
+					"name" : "tenSec[5]",
+					"strict" : false
+				},
+				{
+					"name" : "tenSec[6]",
+					"strict" : false
+				},
+				{
+					"name" : "oneSec[0]",
+					"strict" : false
+				},
+				{
+					"name" : "oneSec[1]",
+					"strict" : false
+				},
+				{
+					"name" : "oneSec[2]",
+					"strict" : false
+				},
+				{
+					"name" : "oneSec[3]",
+					"strict" : false
+				},
+				{
+					"name" : "oneSec[4]",
+					"strict" : false
+				},
+				{
+					"name" : "oneSec[5]",
+					"strict" : false
+				},
+				{
+					"name" : "oneSec[6]",
+					"strict" : false
+				},
+				{
+					"name" : "do_op[0]",
+					"strict" : false
+				},
+				{
+					"name" : "do_op[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Reset",
+					"strict" : false
+				},
+				{
+					"name" : "KEY1",
+					"strict" : false
+				},
+				{
+					"name" : "Clock",
+					"strict" : false
+				},
+				{
+					"name" : "sixBitNum[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sixBitNum[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sixBitNum[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sixBitNum[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sixBitNum[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sixBitNum[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

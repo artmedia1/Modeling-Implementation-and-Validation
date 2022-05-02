@@ -1,0 +1,106 @@
+package definitions;
+
+  parameter VERSION = "1.1";
+
+  parameter ON  = 1'b1;
+  parameter OFF = 1'b0;
+
+  enum logic [5:0] {RDY, Coin5} State, NextState;
+  enum {CASE[9]} Testcase;
+
+  output reg [6:0] sevenSegDisplay;
+  int Time;
+  parameter TRUE = 1'b1;
+  parameter FALSE = 1'b0;
+  parameter CLOCK_CYCLE = 20ms;
+  parameter CLOCK_WIDTH = CLOCK_CYCLE/2;
+  parameter IDLE_CLOCKS = 2ms;
+
+endpackage
+
+module Lab4 (input Clock,
+             input Clear, //SW4
+             input Ten,
+             input Twenty, 
+             output reg Ready,
+             output reg Dispense,
+             output reg Return,
+             output reg Bill);
+
+  import definitions::*;
+
+  //
+  // Update state or reset on every + clock edge
+  // We have no clear
+  //
+
+  always @(posedge Clock)
+  begin 
+   if (!Clear) //SW4 is 0
+	  State <= RDY;
+   else
+	  State <= NextState;
+	  
+  end
+
+  //
+  // Outputs depend only upon state (Moore machine)
+  //
+
+  always @(State)
+  begin
+  case (State)
+	  RDY:	  begin
+	    Ready    = ON;
+		  Bill     = OFF;
+		  Dispense = OFF;
+		  Return   = OFF;
+		  end
+
+	  
+
+  endcase
+  end
+
+
+  //
+  // Next state generation logic
+  //
+
+  always @(Time)
+  begin
+  
+  if(Time > 99)
+  time <= 99;
+  
+  case (Time / 10) 
+			5'd1: tenSec <= 7'b1111001;
+			5'd2: tenSec <= 7'b0100100;
+			5'd3: tenSec <= 7'b0110000;
+			5'd4: tenSec <= 7'b0011001;
+			5'd5: tenSec <= 7'b0010010;
+			5'd6: tenSec <= 7'b0000010;
+			5'd7: tenSec <= 7'b1111000;
+			5'd8: tenSec <= 7'b0000000;
+			5'd9: tenSec <= 7'b0011000;
+			default: tenSec <= 7'b1000000; //sets oneSec to 0
+		endcase	
+					
+		case (Time % 10)
+			5'd1: oneSec <= 7'b1111001;
+			5'd2: oneSec <= 7'b0100100;
+			5'd3: oneSec <= 7'b0110000;
+			5'd4: oneSec <= 7'b0011001;
+			5'd5: oneSec <= 7'b0010010;
+			5'd6: oneSec <= 7'b0000010;
+			5'd7: oneSec <= 7'b1111000;
+			5'd8: oneSec <= 7'b0000000;
+			5'd9: oneSec <= 7'b0011000;
+			default: oneSec <= 7'b1000000; //sets oneSec to 0
+		endcase
+
+  endcase
+  end
+
+
+endmodule

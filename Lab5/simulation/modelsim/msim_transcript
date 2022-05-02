@@ -1,0 +1,35 @@
+# Reading pref.tcl
+# do EECS3216_Lab5_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA/2ndInstall/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/randy/Documents/School/EECS3216/Lab5 {C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:26:42 on Mar 13,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/randy/Documents/School/EECS3216/Lab5" C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv 
+# -- Compiling package definitions
+# -- Compiling module EECS3216_Lab5
+# -- Importing package definitions
+# ** Error: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv(52): (vlog-2110) Illegal reference to net "rdyLight".
+# ** Error: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv(53): (vlog-2110) Illegal reference to net "pushLight".
+# ** Error: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv(54): (vlog-2110) Illegal reference to net "popLight".
+# ** Error: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv(57): (vlog-2110) Illegal reference to net "rdyLight".
+# ** Error: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv(58): (vlog-2110) Illegal reference to net "pushLight".
+# ** Error: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv(59): (vlog-2110) Illegal reference to net "popLight".
+# ** Error: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv(62): (vlog-2110) Illegal reference to net "rdyLight".
+# ** Error: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv(63): (vlog-2110) Illegal reference to net "pushLight".
+# ** Error: C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv(64): (vlog-2110) Illegal reference to net "popLight".
+# End time: 20:26:42 on Mar 13,2022, Elapsed time: 0:00:00
+# Errors: 9, Warnings: 0
+# ** Error: C:/intelFPGA/2ndInstall/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./EECS3216_Lab5_run_msim_rtl_verilog.do line 8
+# C:/intelFPGA/2ndInstall/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/randy/Documents/School/EECS3216/Lab5 {C:/Users/randy/Documents/School/EECS3216/Lab5/EECS3216_Lab5.sv}"
